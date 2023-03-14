@@ -1,0 +1,63 @@
+<meta charset="utf-8">
+<canvas style="position:absolute;" width="600" height="400"></canvas>
+
+<canvas id="fundo" width="600" height="400"></canvas><br>
+
+<!--Input para mudar a cor do pincel-->
+Escolha a cor do pincel <input type="color" name="corDoPincel"><br>
+
+<!--Input para mudar a cor da tela-->
+Escolha a cor da tela <input id="tela" type="color" name="corDaTela">
+
+<script type="text/javascript">
+
+    // tela 1
+    var tela = document.querySelector('canvas');
+
+    var pincel = tela.getContext('2d');
+    var paleta = document.querySelector('input');
+    // fim tela 1
+
+    // tela 2
+    let telaFundo = document.getElementById('fundo');
+
+    let pincel2 = telaFundo.getContext('2d');
+    let paleta2 = document.getElementById('tela');
+    // fim tela 2
+
+    var arrastar = false;
+    var raio = 10;
+
+    function desenhaCirculo(evento) {
+        if (arrastar) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+
+            pincel.fillStyle = paleta.value;
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * 3.14);
+            pincel.fill();
+        }
+        if (evento.shiftKey && evento.altKey) { alert('Por favor, uma tecla apertada por vez.'); }
+
+        else if (evento.shiftKey && raio + 10 <= 20) { raio = raio + 10; }
+
+        else if (evento.altKey && raio - 5 >= 10) { raio = raio - 5; }
+        console.log(x + ',' + y);
+    }
+
+    function balde() {
+        pincel2.fillStyle = paleta2.value;
+        pincel2.fillRect(0, 0, 600, 400);
+    }
+
+    tela.onmousemove = desenhaCirculo;
+
+    var habilitaDesenhar = () => arrastar = true;
+    var desabilitaDesenhar = () => arrastar = false;
+
+    tela.onmousedown = habilitaDesenhar;
+    tela.onmouseup = desabilitaDesenhar;
+    tela.onmouseover = balde;
+
+</script>
