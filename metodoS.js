@@ -97,7 +97,7 @@ vem antes ou depois, ou é a mesma que a string fornecida na ordem de classifica
 
 compareString: A string com a qual a string passada é comparada.
 
-locales _e _options: Esses argumentos personalizam o comportamento da função e 
+locales e options: Esses argumentos personalizam o comportamento da função e 
 permitem que os aplicativos especifiquem o idioma cujas convenções de formatação 
 devem ser usadas. Em implementações que ignoram os argumentos locales e options, 
 a localidade usada e a forma da string retornada são inteiramente dependentes da implementação.
