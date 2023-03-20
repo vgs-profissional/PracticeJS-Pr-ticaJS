@@ -143,6 +143,22 @@ regexp:Um objeto de expressão regular.Se um objeto obj não-RegExp for passado,
 ele será convertido implicitamente em um RegExp usando new RegExp(obj).
 O objeto RegExp deve ter o sinalizador (flag) /g, caso contrário, um TypeError será retornado.*/
 
+/*String.normalize(form) não entendi*/
+
+/* String.padEnd(targetLength, padString)
+
+const str1 = 'Breaded Mushrooms';
+console.log(str1.padEnd(25, '.'));
+
+adiciona texto ao fim da string passada quantas vezes você 
+específicar */
+
+/*String.padStart(targetLength, padString)
+const cpfCompleto = '2034399002125581';
+const last4Digits = cpfCompleto.slice(-4);
+const cpfMascarado = last4Digits.padStart(cpfCompleto.length, '*');
+console.log(cpfMascarado);*/
+
 
 
 
