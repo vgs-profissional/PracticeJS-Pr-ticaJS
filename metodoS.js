@@ -1,4 +1,4 @@
-let frase = 'Eu vou largar minha casa e tráficar no jacaré!';
+const frase = 'Eu vou largar minha casa e fofocar no jacaré!';
 const icones = '☃★♲';
 const aleatorio = '\ud83d\udc0e\ud83d\udc71\u2764';
 const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s#?.].[^\s]*)\)/gm;
@@ -136,10 +136,10 @@ let match;
 while ((match = regexp.exec(str)) !== null) {
     console.log(`Encontrou ${match[0]} início=${match.index} fim=${regexp.lastIndex}.`);
 }
-/*O método matchAll() retorna um iterador de todos os resultados correspondentes 
+/*O método matchAll() retorna um iterador de todos os resultados correspondentes
 a uma string em relação a uma expressão regular, incluindo grupos de captura
 
-regexp:Um objeto de expressão regular.Se um objeto obj não-RegExp for passado, 
+regexp:Um objeto de expressão regular.Se um objeto obj não-RegExp for passado,
 ele será convertido implicitamente em um RegExp usando new RegExp(obj).
 O objeto RegExp deve ter o sinalizador (flag) /g, caso contrário, um TypeError será retornado.*/
 
@@ -150,7 +150,7 @@ O objeto RegExp deve ter o sinalizador (flag) /g, caso contrário, um TypeError 
 const str1 = 'Breaded Mushrooms';
 console.log(str1.padEnd(25, '.'));
 
-adiciona texto ao fim da string passada quantas vezes você 
+adiciona texto ao fim da string passada quantas vezes você
 específicar */
 
 /*String.padStart(targetLength, padString)
@@ -159,9 +159,54 @@ const last4Digits = cpfCompleto.slice(-4);
 const cpfMascarado = last4Digits.padStart(cpfCompleto.length, '*');
 console.log(cpfMascarado);*/
 
+// String.raw(callSite, substitutions, templateString) não entendi
 
+/*String.repeat(count)
 
+// 'abc'.repeat(-1);   // RangeError
+console.log('abc'.repeat(0))// ''
+console.log('abc'.repeat(1))// 'abc'
+console.log('abc'.repeat(2))// 'abcabc'
+console.log('abc'.repeat(3.5))//'abcabcabc' (o número será convertido para inteiro)
+// 'abc'.repeat(1/0);  // RangeError 
 
+Passe uma string a .repeat() e diga quantas vezes ela deve ser concatenada
+a ela mesma.
+
+O número de repetições não pode ser negativo.
+O número de repetições deve ser menor que infinito e não 
+deve ultrapassar o tamanho máximo da string.
+
+*/
+
+/*String.replace(regexp|substr, newSubStr|function)
+
+console.log(frase.replace('fofocar', 'brincar'));
+const fraseAlternativa = frase.replace('fofocar', 'brincar');
+const regexBrincar = /BriNcAr/i;
+console.log(fraseAlternativa.replace(regexBrincar, 'fofocar'));
+
+Substitui o texto passado replace(regexp|substr) pelo segundo parâmetro
+replace(newSubStr|function).
+
+egexp:
+Um objeto RegExp ou literal. A correspondência ou correspondências são 
+substituídas por newSubStr ou o valor retornado pela function especificada.
+
+substr
+Uma String que será substituída por newSubStr. Ele é tratado como uma string 
+textual e não é interpretado como uma expressão regular. Apenas a primeira 
+ocorrência será substituída.
+
+newSubStr:
+A String que substitui a substr recebida do parâmetro #1. Uma série de padrões 
+de substituições especiais são suportados.
+
+function:
+A função (function) chamada cria uma nova substring (para ser colocada no lugar 
+da substring recebida pelo parametro #1). Os argumentos fornececidos para essa 
+função estão descritos na seção "
+*/
 
 
 
